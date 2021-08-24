@@ -27,7 +27,19 @@ public class HolaMundo : MonoBehaviour
         theTransform.Rotate(transform.up * velocidadDeGiro * Time.deltaTime);
 
     }
-    
-    
+    private void FixedUpdate()
+    {
+        
+    }
+    private void LateUpdate()
+    {
+        
+    }
+    private void OnMouseDown()
+    {
+        
+    }
+
+
 
 }
