@@ -6,12 +6,9 @@ public class MoverGatito : MonoBehaviour
 {
     public Transform gatitoTransform;
     public float speedGatito=10;
-    int test;
-    // Start is called before the first frame update
-    void Start()
-    {
-        Destroy(gameObject);
-    }
+    public int hp;
+    
+   
 
     // Update is called once per frame
     void Update()
@@ -29,9 +26,7 @@ public class MoverGatito : MonoBehaviour
     private void OnMouseDown()
     {
         print("gato clickeado");
-        MiMetodo();
-        print(15 + CalculoVida());
-        Suma(3,7.5f);
+        TakeDamage();
     }
     private void OnMouseDrag()
     {
@@ -53,17 +48,17 @@ public class MoverGatito : MonoBehaviour
     {
         print("Suelta el click sobre el gato");
     }
-    private void MiMetodo()
+    public void TakeDamage()
     {
-        print("llame a mi metodo");
+        hp--;
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+        }
+        
     }
-    private string CalculoVida()
-    {
-        return "15";
-    }
-    public void Suma(float a, float b)
-    {
-        print(a + b);
-    }
-
+    //operaciones aritmeticas.
+    // + - / * %
+    // Mathf
+    // "hola" + " " + "mundo" = "hola mundo"
 }

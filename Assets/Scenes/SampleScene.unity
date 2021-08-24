@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.57481617, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -133,7 +133,6 @@ GameObject:
   m_Component:
   - component: {fileID: 705507995}
   - component: {fileID: 705507994}
-  - component: {fileID: 705507996}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -217,26 +216,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!114 &705507996
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 705507993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8de5bc3a04fccb04ca537312592b5c76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  edadPersonaje: 50
-  altura: 0
-  hambre: 0
-  nombre: 
-  velocidadDeGiro: 50
-  variableEscondida: 0
-  cameraTest: {fileID: 963194227}
-  theTransform: {fileID: 0}
 --- !u!1 &720422169
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,6 +313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gatitoTransform: {fileID: 720422171}
   speedGatito: 10
+  hp: 10
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,6 +408,7 @@ GameObject:
   - component: {fileID: 1895267791}
   - component: {fileID: 1895267790}
   - component: {fileID: 1895267789}
+  - component: {fileID: 1895267792}
   m_Layer: 0
   m_Name: cat_asset_maine_coon (1)
   m_TagString: Untagged
@@ -449,6 +430,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gatitoTransform: {fileID: 1895267791}
   speedGatito: 5
+  hp: 10
 --- !u!212 &1895267790
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -514,3 +496,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1895267792
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895267788}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.6, y: 5.6, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
