@@ -5,10 +5,14 @@ using UnityEngine;
 public class Coleccionable : MonoBehaviour
 {
     public GameObject particles;
+    public AudioSource sfx;
+    
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
         {
+            sfx.Play();
             GameManager.instance.puntaje++;
             Instantiate(particles, transform.position, Quaternion.identity);
             Destroy(gameObject);
