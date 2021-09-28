@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Bullet
   - Floor
+  - Enemy
+  - Waypoint
   layers:
   - Default
   - TransparentFX

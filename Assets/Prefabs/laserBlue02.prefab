@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 3853719719232904054}
   - component: {fileID: 3853719719232904053}
   - component: {fileID: 3853719719232904052}
+  - component: {fileID: 8914997965871945914}
   m_Layer: 0
   m_Name: laserBlue02
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,3 +98,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedBullet: 50
   direction: {x: 0, y: 1}
+--- !u!70 &8914997965871945914
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3853719719232904051}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.13, y: 0.37}
+  m_Direction: 0

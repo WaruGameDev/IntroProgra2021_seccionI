@@ -6,6 +6,7 @@ public class BulletShootEmUp : MonoBehaviour
 {
     public float speedBullet = 50;
     public Vector2 direction = new Vector2(0, 1);
+    public float damage = 1;
     // Start is called before the first frame update
     void Start()
     {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterControllerPlatform : MonoBehaviour
 {
@@ -17,6 +18,15 @@ public class CharacterControllerPlatform : MonoBehaviour
 
     [Header("Fx")]
     public ParticleSystem dust;
+
+    [Header("Attack")]
+    public GameObject attackZone;
+    public bool attacking;
+    public float attackDuration = 0.2f;
+    private void Start()
+    {
+        attackZone.SetActive(false);
+    }
     // Update is called once per frame
     void Update()
     {
@@ -31,9 +41,12 @@ public class CharacterControllerPlatform : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 0, 0);
         }
         anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
-        anim.SetInteger("Hp", GetComponent<Health>().health);
+        anim.SetFloat("VelocityY", rb.velocity.y);
+        anim.SetBool("isGround", isGrounded);
+        anim.SetBool("Attacking", attacking);
+        //anim.SetFloat("Hp", GetComponent<Health>().health);
 
-        if(Mathf.Abs(rb.velocity.x) > 0 && isGrounded)
+        if (Mathf.Abs(rb.velocity.x) > 0 && isGrounded)
         {
             if(dust.isStopped)
             {
@@ -47,7 +60,7 @@ public class CharacterControllerPlatform : MonoBehaviour
                 dust.Stop();
             }
         }
-
+        
         if(Input.GetButtonDown("Jump") && isGrounded)
         {
             Jump();
@@ -61,7 +74,10 @@ public class CharacterControllerPlatform : MonoBehaviour
         {
             rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
-
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            Attack();
+        }
 
     }
 
@@ -89,6 +105,22 @@ public class CharacterControllerPlatform : MonoBehaviour
         {
             isGrounded = false;
         }
+    }
+    public void Attack()
+    {
+        if(!attacking)
+        {
+            attacking = true;
+            StartCoroutine(Attacking());
+        }    
+    }
+    IEnumerator Attacking()
+    {
+        attackZone.SetActive(true);
+        yield return new WaitForSeconds(attackDuration);
+        attackZone.SetActive(false);
+        attacking = false;
+        yield break;
     }
 
 }
