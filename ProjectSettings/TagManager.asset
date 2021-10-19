@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Waypoint
   - Water
+  - Fruit
   layers:
   - Default
   - TransparentFX
